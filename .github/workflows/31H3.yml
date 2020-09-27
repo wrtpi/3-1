@@ -101,7 +101,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           
-      - name: Costom Configure File
+      - name: Custom Configure File
         run: |
           cd friendlywrt-h3/friendlywrt
           rm -f ./.config*
@@ -125,7 +125,9 @@ jobs:
       - name: Build OpenWrt
         run: |
           cd friendlywrt-h3
-          ./build.sh nanopi_r1s.mk
+          ./build.sh nanopi_r1s_h3.mk
+          #./build.sh nanopi_r1s.mk
+          #./build.sh nanopi_r1.mk
       
       - name: Zip Files
         run: |
