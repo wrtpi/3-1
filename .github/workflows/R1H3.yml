@@ -1,7 +1,7 @@
 #
 # This is free software, lisence use MIT.
 # 
-# Copyright (C) 2019 Jolly <https://totoro.site>
+# Copyright (C) 2020 Tony <https://baidu.com>
 # 
 # <https://github.com/wrtpi/3-1>
 #
@@ -117,7 +117,6 @@ jobs:
           
       - name: SSH connection to Actions 
         uses: P3TERX/debugger-action@master
-
 
       - name: Build OpenWrt
         run: |
