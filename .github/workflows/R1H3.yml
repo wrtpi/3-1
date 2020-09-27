@@ -11,13 +11,20 @@
 name: R1H3
 
 on:
+  release:
+    types: [published]
   push:
     branches: 
       - master
+  watch:
+      types: [started]
   # schedule:
   #   - cron: 0 20 * * *
   # release:
   #   types: [published]
+  #  watch:
+  #    types: [started]
+
 
 jobs:
 
@@ -36,7 +43,8 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash         
+          wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash   
+          ##199.232.68.133 raw.githubusercontent.com      
           
       - name: Install Repo
         run: |
@@ -54,7 +62,8 @@ jobs:
           cd friendlywrt-h3
           cd .repo/manifests
           rm -f ./h3.xml
-          wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/source_xml/h3_19.07.xml
+          #wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/source_xml/h3_19.07.xml
+          cp ../source_xml/h3_19.07.xml h3_19.07.xml
           cp h3_19.07.xml h3.xml
           rm -rf ./h3_19.07.xml
           repo sync -c  --no-clone-bundle
