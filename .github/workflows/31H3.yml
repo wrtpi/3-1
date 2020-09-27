@@ -52,9 +52,9 @@ jobs:
           cd friendlywrt-h3
           repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m h3.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
 
-      - name: SSH connection to Actions 
-        uses: V2RAY-VPN/debugger-action@master
-        #uses: csexton/debugger-action@master
+      #- name: SSH connection to Actions 
+      #  uses: V2RAY-VPN/debugger-action@master
+
         
       - name: Merge UpStearm OpenWrt
         run: |
@@ -118,7 +118,7 @@ jobs:
       #  uses: P3TERX/debugger-action@master
 
       - name: SSH connection to Actions 
-        uses: csexton/debugger-action@master
+        uses: V2RAY-VPN/debugger-action@master
 
       - name: Build OpenWrt
         run: |
