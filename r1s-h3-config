@@ -179,7 +179,7 @@ CONFIG_SHADOW_PASSWORDS=y
 # CONFIG_COLLECT_KERNEL_DEBUG is not set
 
 #
-# Kernel build options
+# Kernel build options 
 #
 CONFIG_KERNEL_BUILD_USER=""
 CONFIG_KERNEL_BUILD_DOMAIN=""
