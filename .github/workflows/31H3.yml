@@ -62,11 +62,11 @@ jobs:
         run: |
           cd friendlywrt-h3
           cd .repo/manifests
-          rm -f ./h3.xml
-          #wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/source_xml/h3_19.07.xml
-          cp ../../../source_xml/h3_19.07.xml h3_19.07.xml
-          cp h3_19.07.xml h3.xml
-          rm -rf ./h3_19.07.xml
+          #rm -f ./h3.xml
+          ### wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/source_xml/h3_19.07.xml
+          #cp ../../../source_xml/h3_19.07.xml h3_19.07.xml
+          #cp h3_19.07.xml h3.xml
+          #rm -rf ./h3_19.07.xml
           repo sync -c  --no-clone-bundle
       
       - name: Merge LEDE
