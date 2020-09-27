@@ -33,11 +33,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      #- name: Checkout
-      #  uses: actions/checkout@master
-      #  with:
-      #    ref: master
-
+    
       - name: Initialization Environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -114,8 +110,11 @@ jobs:
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
           
+      #- name: SSH connection to Actions 
+      #  uses: P3TERX/debugger-action@master
+
       - name: SSH connection to Actions 
-        uses: P3TERX/debugger-action@master
+        uses: csexton/debugger-action@master
 
       - name: Build OpenWrt
         run: |
