@@ -51,14 +51,17 @@ jobs:
           mkdir friendlywrt-h3
           cd friendlywrt-h3
           repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m h3.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
-      
+
+      - name: SSH connection to Actions 
+        uses: csexton/debugger-action@master
+        
       - name: Merge UpStearm OpenWrt
         run: |
           cd friendlywrt-h3
           cd .repo/manifests
           rm -f ./h3.xml
           #wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/source_xml/h3_19.07.xml
-          cp ../source_xml/h3_19.07.xml h3_19.07.xml
+          cp ../../source_xml/h3_19.07.xml h3_19.07.xml
           cp h3_19.07.xml h3.xml
           rm -rf ./h3_19.07.xml
           repo sync -c  --no-clone-bundle
