@@ -28,7 +28,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04 #latest
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     
     steps:
@@ -51,9 +51,6 @@ jobs:
           git clone https://github.com/friendlyarm/repo
           sudo cp repo/repo /usr/bin/
 
-
-      - name: SSH connection to Actions 
-        uses: V2RAY-VPN/debugger-action@master
         
       - name: Free Disk Space
         run: |
@@ -140,7 +137,7 @@ jobs:
       #  uses: P3TERX/debugger-action@master
 
       - name: SSH connection to Actions 
-        uses: V2RAY-VPN/debugger-action
+        uses: V2RAY-VPN/debugger-action@master
 
       - name: Build OpenWrt
         run: |
