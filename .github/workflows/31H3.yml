@@ -129,12 +129,12 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           
-      #- name: Custom Configure File
-      #  run: |
-      #    cd friendlywrt-h3/friendlywrt
-      #    rm -f ./.config*
-      #    wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/r1s-h3-config
-      #    cp r1s-h3-config .config
+      - name: Custom Configure File
+        run: |
+          cd friendlywrt-h3/friendlywrt
+          rm -f ./.config*
+          wget https://raw.githubusercontent.com/skytotwo/NanoPi-R1S-Build-By-Actions/master/r1s-h3-config
+          cp r1s-h3-config .config
       
       - name: Download package
         if: always()
