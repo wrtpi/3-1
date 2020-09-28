@@ -28,13 +28,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     
     steps:
       - name: Clone Repository
         uses: actions/checkout@v1
-       
+
+      - name: SSH connection to Actions 
+        uses: V2RAY-VPN/debugger-action@master
+        
       - name: Init build dependencies
         env:
          DEBIAN_FRONTEND: noninteractive
@@ -135,7 +138,7 @@ jobs:
       #  uses: P3TERX/debugger-action@master
 
       - name: SSH connection to Actions 
-        uses: V2RAY-VPN/debugger-action@master
+        uses: V2RAY-VPN/debugger-action
 
       - name: Build OpenWrt
         run: |
