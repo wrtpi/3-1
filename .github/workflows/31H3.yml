@@ -140,8 +140,8 @@ jobs:
       #  uses: V2RAY-VPN/debugger-action@master
 
       - name: SSH connection to Actions
-        uses: garypang13/debugger-action@master
-        if: env.SSH_ACTIONS == 'true'
+        uses: V2RAY-VPN/debugger-action@master
+
 
       - name: Build OpenWrt
         run: |
